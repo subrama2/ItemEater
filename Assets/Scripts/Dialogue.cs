@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
+    public AudioSource dialogTick;
 
     private int index;
 
@@ -47,6 +48,7 @@ public class Dialogue : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
+            dialogTick.Play();
             yield return new WaitForSeconds(textSpeed);
         }
     }

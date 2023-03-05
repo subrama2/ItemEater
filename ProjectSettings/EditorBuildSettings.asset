@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaveInterior.unity
     guid: bb9081b665d8f9140ac089151b8d0e83
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: 668b2a6a699606f43bbf802a3e7fcdb8
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 1dd165b519c13a34b9073b238ef3c378
   m_configObjects: {}

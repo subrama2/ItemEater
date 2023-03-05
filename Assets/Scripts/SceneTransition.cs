@@ -9,7 +9,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene("CaveInterior");
+            SceneManager.LoadScene("Dungeon");
         }
     }
 }
