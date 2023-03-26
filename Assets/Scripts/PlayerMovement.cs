@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         } 
         else if(Input.GetKey(KeyCode.S))
         {
-            anim.SetFloat("Speed", -1);
+            anim.SetFloat("Speed", 1);
             transform.Translate(0, 0, -speed * Time.deltaTime);
         } else
         {
@@ -41,12 +41,20 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(-speed * Time.deltaTime, 0, 0);
         } else if (Input.GetKey(KeyCode.D))
         {
-            anim.SetFloat("HSpeed", -1);
+            anim.SetFloat("HSpeed", 1);
             transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         else
         {
             anim.SetFloat("HSpeed", 0);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetBool("Attack", true);
+        } else
+        {
+            anim.SetBool("Attack", false);
         }
 
         float mouseX = Input.GetAxis("Mouse X");
