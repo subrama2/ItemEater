@@ -7,10 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     Animator anim;
     public float speed;
+    public float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         anim = GetComponent<Animator>();
     }
 
@@ -45,12 +49,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("HSpeed", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetBool("Jump", true);
-        } else
-        {
-            anim.SetBool("Jump", false);
-        }
+        float mouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
     }
 }
