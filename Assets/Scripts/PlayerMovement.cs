@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     public float speed;
     public float rotationSpeed;
+    public GameObject hurtBox;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             anim.SetFloat("Speed", 1);
             transform.Translate(0, 0, speed * Time.deltaTime);
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetBool("Attack", true);
+            StartCoroutine(Attacking());
         } else
         {
             anim.SetBool("Attack", false);
@@ -59,5 +61,12 @@ public class PlayerMovement : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X");
         transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
+    }
+
+    IEnumerator Attacking()
+    {
+        hurtBox.SetActive(true);
+        yield return new WaitForSeconds(0.75f);
+        hurtBox.SetActive(false);
     }
 }
