@@ -12,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Walls
-  - Hitbox
-  - 
+  - Terrain
+  - Player
+  - Enemy
   - 
   - 
   - 

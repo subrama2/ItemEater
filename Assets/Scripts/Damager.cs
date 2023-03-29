@@ -17,10 +17,7 @@ public class Damager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hitbox.active)
-        {
             DetectColliders();
-        }
     }
 
     private void OnDrawGizmosSelected()
@@ -34,7 +31,12 @@ public class Damager : MonoBehaviour
     {
         foreach (Collider collider in Physics.OverlapSphere(originPoint.position, radius))
         {
-            Debug.Log(collider.name);
+            //Debug.Log(collider.name);
+            Health health;
+            if (health = collider.GetComponent<Health>())
+            {
+                health.GetHit(3, transform.parent.gameObject);
+            }
         }
     }
 }
