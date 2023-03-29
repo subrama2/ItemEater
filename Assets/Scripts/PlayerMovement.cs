@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     public float speed;
     public float rotationSpeed;
-    public GameObject hurtBox;
+    public GameObject hitBox;
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +62,10 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Attacking()
     {
         anim.SetBool("Attack", true);
-        hurtBox.SetActive(true);
-        yield return new WaitForSeconds(0.75f);
-        hurtBox.SetActive(false);
+        yield return new WaitForSeconds(0.40f);
+        hitBox.SetActive(true);
+        yield return new WaitForSeconds(0.65f);
+        hitBox.SetActive(false);
         anim.SetBool("Attack", false);
     }
 }

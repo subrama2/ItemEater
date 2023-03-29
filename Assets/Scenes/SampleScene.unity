@@ -688,9 +688,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2062907258968823304, guid: 671c5fc9df0e7104aa0aabed27544fcb,
         type: 3}
+      propertyPath: m_AngularDrag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062907258968823304, guid: 671c5fc9df0e7104aa0aabed27544fcb,
+        type: 3}
       propertyPath: m_Constraints
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 2062907258968823308, guid: 671c5fc9df0e7104aa0aabed27544fcb,
+        type: 3}
+      propertyPath: hitBox
+      value: 
+      objectReference: {fileID: 1144287556}
+    - target: {fileID: 2062907258968823308, guid: 671c5fc9df0e7104aa0aabed27544fcb,
+        type: 3}
+      propertyPath: damager
+      value: 
+      objectReference: {fileID: 1144287558}
     - target: {fileID: 2062907258968823308, guid: 671c5fc9df0e7104aa0aabed27544fcb,
         type: 3}
       propertyPath: hurtBox
@@ -700,6 +715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotationSpeed
       value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062907258968823309, guid: 671c5fc9df0e7104aa0aabed27544fcb,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -726,7 +746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1144287557
 Transform:
   m_ObjectHideFlags: 0
@@ -754,5 +774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2769da79ceec78945a23437ccde5c452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitbox: {fileID: 1144287556}
   originPoint: {fileID: 1144287557}
   radius: 0.3

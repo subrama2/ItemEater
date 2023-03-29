@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-
+    public GameObject hitbox;
     public Transform originPoint;
     public float radius;
 
@@ -17,7 +17,10 @@ public class Damager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DetectColliders();
+        if (hitbox.active)
+        {
+            DetectColliders();
+        }
     }
 
     private void OnDrawGizmosSelected()
