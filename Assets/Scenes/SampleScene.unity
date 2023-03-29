@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 630121894}
   - component: {fileID: 630121893}
   - component: {fileID: 630121892}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EnemyDummy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hurtBox
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1144287556}
     - target: {fileID: 2062907258968823308, guid: 671c5fc9df0e7104aa0aabed27544fcb,
         type: 3}
       propertyPath: rotationSpeed
@@ -719,8 +719,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1144287557}
+  - component: {fileID: 1144287558}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,3 +742,17 @@ Transform:
   m_Father: {fileID: 729556810}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1144287558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144287556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2769da79ceec78945a23437ccde5c452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originPoint: {fileID: 1144287557}
+  radius: 0.3

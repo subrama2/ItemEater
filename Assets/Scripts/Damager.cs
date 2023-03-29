@@ -5,25 +5,33 @@ using UnityEngine;
 public class Damager : MonoBehaviour
 {
 
-    public Collider col;
+    public Transform originPoint;
+    public float radius;
 
     // Start is called before the first frame update
     void Start()
     {
-        col = GetComponent<Collider>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        DetectColliders();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.tag == "Enemy")
+        Gizmos.color = Color.red;
+        Vector3 position = originPoint == null ? Vector3.zero : originPoint.position;
+        Gizmos.DrawWireSphere(position, radius);
+    }
+
+    public void DetectColliders()
+    {
+        foreach (Collider collider in Physics.OverlapSphere(originPoint.position, radius))
         {
-            Debug.Log("Detected Enemy!");
+            Debug.Log(collider.name);
         }
     }
 }

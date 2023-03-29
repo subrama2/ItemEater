@@ -52,11 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetBool("Attack", true);
             StartCoroutine(Attacking());
-        } else
-        {
-            anim.SetBool("Attack", false);
         }
 
         float mouseX = Input.GetAxis("Mouse X");
@@ -65,8 +61,10 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Attacking()
     {
+        anim.SetBool("Attack", true);
         hurtBox.SetActive(true);
         yield return new WaitForSeconds(0.75f);
         hurtBox.SetActive(false);
+        anim.SetBool("Attack", false);
     }
 }
