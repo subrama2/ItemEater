@@ -35,7 +35,7 @@ public class Damager : MonoBehaviour
             Health health;
             if (health = collider.GetComponent<Health>())
             {
-                health.GetHit(3, transform.parent.gameObject);
+                health.GetHit(3, transform.parent.gameObject);     
             }
         }
     }
