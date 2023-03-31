@@ -7,26 +7,32 @@ public class PlayerMovement : MonoBehaviour
 {
     Animator anim;
     public float speed;
+    public float rotationSpeed;
+    public GameObject hitBox;
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             anim.SetFloat("Speed", 1);
             transform.Translate(0, 0, speed * Time.deltaTime);
-        } 
-        else if(Input.GetKey(KeyCode.S))
+        }
+        else if (Input.GetKey(KeyCode.S))
         {
-            anim.SetFloat("Speed", -1);
+            anim.SetFloat("Speed", 1);
             transform.Translate(0, 0, -speed * Time.deltaTime);
-        } else
+        }
+        else
         {
             anim.SetFloat("Speed", 0);
         }
@@ -35,9 +41,10 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetFloat("HSpeed", 1);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
-        } else if (Input.GetKey(KeyCode.D))
+        }
+        else if (Input.GetKey(KeyCode.D))
         {
-            anim.SetFloat("HSpeed", -1);
+            anim.SetFloat("HSpeed", 1);
             transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         else
@@ -45,12 +52,23 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("HSpeed", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            anim.SetBool("Jump", true);
-        } else
-        {
-            anim.SetBool("Jump", false);
+            StartCoroutine(Attacking());
         }
+
+        float mouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
+    }
+
+
+    IEnumerator Attacking()
+    {
+        anim.SetBool("Attack", true);
+        yield return new WaitForSeconds(0.40f);
+        hitBox.SetActive(true);
+        yield return new WaitForSeconds(0.65f);
+        hitBox.SetActive(false);
+        anim.SetBool("Attack", false);
     }
 }
