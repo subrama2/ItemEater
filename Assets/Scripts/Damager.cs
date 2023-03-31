@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-    public GameObject hitbox;
     public Transform originPoint;
     public float radius;
+    public float knockbackStrength;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +31,16 @@ public class Damager : MonoBehaviour
     {
         foreach (Collider collider in Physics.OverlapSphere(originPoint.position, radius))
         {
+            Vector3 direction = collider.transform.position - transform.position;
+            direction.y = 0;
             //Debug.Log(collider.name);
+            Rigidbody rb;
             Health health;
-            if (health = collider.GetComponent<Health>())
-            {
-                health.GetHit(3, transform.parent.gameObject);     
+            if ((health = collider.GetComponent<Health>()) && collider.tag == "Enemy")
+            { 
+                health.GetHit(3, transform.parent.gameObject);
+                rb = collider.GetComponent<Rigidbody>();
+                rb.AddForce(direction.normalized * knockbackStrength, ForceMode.Impulse);
             }
         }
     }

@@ -26,12 +26,13 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetFloat("Speed", 1);
             transform.Translate(0, 0, speed * Time.deltaTime);
-        } 
-        else if(Input.GetKey(KeyCode.S))
+        }
+        else if (Input.GetKey(KeyCode.S))
         {
             anim.SetFloat("Speed", 1);
             transform.Translate(0, 0, -speed * Time.deltaTime);
-        } else
+        }
+        else
         {
             anim.SetFloat("Speed", 0);
         }
@@ -40,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetFloat("HSpeed", 1);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
-        } else if (Input.GetKey(KeyCode.D))
+        }
+        else if (Input.GetKey(KeyCode.D))
         {
             anim.SetFloat("HSpeed", 1);
             transform.Translate(speed * Time.deltaTime, 0, 0);
@@ -58,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
     }
+
 
     IEnumerator Attacking()
     {
