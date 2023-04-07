@@ -1,25 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject Enemy;
-    public Transform EnemyPos;
-    private float RepeatCycle = 4f;
 
-    private void OnTriggerEnter(Collider other)
+
+    /**
+     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            InvokeRepeating("EnemySpawner", 0.5f, RepeatCycle);
-            Destroy(gameObject, 11);
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            foreach (GameObject spider in spiders)
+            {
+                spider.SetActive(true);
+            }
         }
     }
-    void EnemySpawner()
+
+    **/
+    public GameObject enemyPrefab;
+    
+
+    
+
+    void OnTriggerEnter(Collider other)
     {
-        Instantiate(Enemy, EnemyPos.position, EnemyPos.rotation);
+        if (other.CompareTag("Player"))
+        {
+            SpawnEnemy();
+        }
+
+
+
+
+        void SpawnEnemy()
+        {
+
+            Vector3 spawnPosition = new Vector3(Random.Range(-6, 6), 5, Random.Range(-6, 6));
+            Instantiate(enemyPrefab, spawnPosition,Quaternion.identity);
+
+
+
+        }
     }
 }
