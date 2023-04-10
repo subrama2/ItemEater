@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damager : MonoBehaviour
+public class EnemyDamager : MonoBehaviour
 {
     public Transform originPoint;
     public float radius;
@@ -34,18 +34,13 @@ public class Damager : MonoBehaviour
             Vector3 direction = collider.transform.position - transform.position;
             direction.y = 0;
             //Debug.Log(collider.name);
-            GameObject parent = collider.gameObject;
             Rigidbody rb;
             Health health;
-            if ((health = collider.GetComponent<Health>()) && collider.tag == "Enemy")
+            if ((health = collider.GetComponent<Health>()) && collider.tag == "Player")
             { 
                 health.GetHit(3, transform.parent.gameObject);
                 rb = collider.GetComponent<Rigidbody>();
                 rb.AddForce(direction.normalized * knockbackStrength, ForceMode.Impulse);
-                if (health.isDead)
-                {
-                    Destroy(parent);
-                }
             }
         }
     }

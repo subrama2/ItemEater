@@ -656,6 +656,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
+      propertyPath: m_Mass
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
+        type: 3}
       propertyPath: m_AngularDrag
       value: 3
       objectReference: {fileID: 0}
@@ -669,6 +674,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.37
       objectReference: {fileID: 0}
+    - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 749917533}
     - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: hitBox
@@ -852,7 +862,7 @@ PrefabInstance:
     - target: {fileID: 9104335977691659692, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: Player Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 9104335977691659692, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}

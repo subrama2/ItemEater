@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float rotationSpeed;
     public GameObject hitBox;
+    public Health health;
     public bool inControl = true;
 
     // Start is called before the first frame update
@@ -61,6 +62,12 @@ public class PlayerMovement : MonoBehaviour
 
             float mouseX = Input.GetAxis("Mouse X");
             transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
+        }
+
+        if (health.isDead) 
+        {
+            inControl = false;
+            anim.SetTrigger("Dead");
         }
     }
 
