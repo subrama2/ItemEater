@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,38 +23,44 @@ public class EnemyAttack : MonoBehaviour
     bool alreadyAttacked;
 
     //states
-    public float sightRange, attackRange;
+    public float attackRange;
     bool playerInSightedRange, playerInAttackRange;
 
 
     private void Awake()
     {
-        player = GameObject.Find("Player Variant 1").transform;
         agent = GetComponent<NavMeshAgent>();
-
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, attackRange);
+    }
+
     void Update()
     {
         // move
         // agent.SetDestination(player.position);
         // agent.destination = PlayerPos.transform.position;
-        playerInSightedRange = Physics.CheckSphere(transform.position, sightRange, PlayerDetect);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, PlayerDetect);
         //if (player != null && Vector3.Distance(transform.position, player.position) <= attackDistance && Time.time >= nextAttackTime)
         // {
         //nextAttackTime = Time.time + attackRate;
         // Attack();
         //}
-        if (playerInSightedRange && !playerInAttackRange) chasePlayer();
-        if (playerInSightedRange && playerInAttackRange) AttackPlayer();
+        if (playerInAttackRange) AttackPlayer();
+        else chasePlayer();
 
     }
     private void chasePlayer()
     {
+        Debug.Log("chase");
         agent.SetDestination(player.position);
     }
     private void AttackPlayer()
     {
+        Debug.Log("attack");
         agent.SetDestination(transform.position);
         transform.LookAt(player);
 

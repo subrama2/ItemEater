@@ -109,6 +109,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5981351148067718210}
+    - targetCorrespondingSourceObject: {fileID: 134598, guid: 2a71030b8ff2f8e4db68e9f8e878a2d7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9176502404000758739}
   m_SourcePrefab: {fileID: 100100000, guid: 2a71030b8ff2f8e4db68e9f8e878a2d7, type: 3}
 --- !u!1 &6400071579083888593 stripped
 GameObject:
@@ -178,10 +182,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a6b8c7d6c6aec478387ca79c91dc6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 2
-  attackRate: 1
-  attackDamage: 10
+  navMesh: {fileID: 0}
   agent: {fileID: 0}
+  player: {fileID: 0}
+  whatground:
+    serializedVersion: 2
+    m_Bits: 0
+  PlayerDetect:
+    serializedVersion: 2
+    m_Bits: 0
+  walkpoint: {x: 0, y: 0, z: 0}
+  walkpointrange: 0
+  timebetweenattack: 0
+  attackRange: 0
 --- !u!95 &5981351148067718210
 Animator:
   serializedVersion: 5
@@ -203,3 +216,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!195 &9176502404000758739
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6400071579083888593}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 8
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.44
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
