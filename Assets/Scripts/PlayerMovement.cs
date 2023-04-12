@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float rotationSpeed;
     public GameObject hitBox;
+    public Health health;
+    public bool inControl = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,43 +24,51 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            anim.SetFloat("Speed", 1);
-            transform.Translate(0, 0, speed * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            anim.SetFloat("Speed", 1);
-            transform.Translate(0, 0, -speed * Time.deltaTime);
-        }
-        else
-        {
-            anim.SetFloat("Speed", 0);
+        if (inControl) { 
+            if (Input.GetKey(KeyCode.W))
+            {
+                anim.SetFloat("Speed", 1);
+                transform.Translate(0, 0, speed * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                anim.SetFloat("Speed", 1);
+                transform.Translate(0, 0, -speed * Time.deltaTime);
+            }
+            else
+            {
+                anim.SetFloat("Speed", 0);
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                anim.SetFloat("HSpeed", 1);
+                transform.Translate(-speed * Time.deltaTime, 0, 0);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                anim.SetFloat("HSpeed", 1);
+                transform.Translate(speed * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                anim.SetFloat("HSpeed", 0);
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine(Attacking());
+            }
+
+            float mouseX = Input.GetAxis("Mouse X");
+            transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (health.isDead) 
         {
-            anim.SetFloat("HSpeed", 1);
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
+            inControl = false;
+            anim.SetTrigger("Dead");
         }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            anim.SetFloat("HSpeed", 1);
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
-        else
-        {
-            anim.SetFloat("HSpeed", 0);
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(Attacking());
-        }
-
-        float mouseX = Input.GetAxis("Mouse X");
-        transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
     }
 
 

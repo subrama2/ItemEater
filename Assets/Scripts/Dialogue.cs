@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     public AudioSource dialogTick;
+    public bool textDone = false;
 
     private int index;
 
@@ -62,6 +63,7 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(TypeLine());
         } else
         {
+            textDone = true;
             gameObject.SetActive(false);
         }
     }

@@ -6,12 +6,12 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private int currentHealth, maxHealth;
+    public int currentHealth, maxHealth;
 
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
 
     [SerializeField]
-    private bool isDead = false;
+    public bool isDead = false;
 
     public void InitializeHealth(int healthValue)
     {
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         {
             OnDeathWithReference?.Invoke(sender);
             isDead = true;
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
