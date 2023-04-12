@@ -9,6 +9,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform originPoint;
     public Vector3 size;
+    public int numofEnemies;
 
     private void Update()
     {
@@ -28,7 +29,7 @@ public class EnemySpawn : MonoBehaviour
         {
             if (collider.CompareTag("Player"))
             {
-                for (int i = 0; i <= 2; i++)
+                for (int i = 0; i <= numofEnemies; i++)
                 {
                     SpawnEnemy();
                 }
