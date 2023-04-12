@@ -6,20 +6,6 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
 
-
-    /**
-     void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            foreach (GameObject spider in spiders)
-            {
-                spider.SetActive(true);
-            }
-        }
-    }
-
-    **/
     public GameObject enemyPrefab;
     
 
@@ -29,7 +15,11 @@ public class EnemySpawn : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SpawnEnemy();
+            for(int i = 0;i <= 2; i++ )
+            {
+                SpawnEnemy();
+            }
+            Destroy(gameObject);
         }
 
 
@@ -38,11 +28,8 @@ public class EnemySpawn : MonoBehaviour
         void SpawnEnemy()
         {
 
-            Vector3 spawnPosition = new Vector3(Random.Range(-6, 6), 5, Random.Range(-6, 6));
-            Instantiate(enemyPrefab, spawnPosition,Quaternion.identity);
-
-
-
+            Vector3 spawnPosition = new Vector3(Random.Range(-6, 6), 0, Random.Range(-6, 6));
+            Instantiate(enemyPrefab, gameObject.transform.position + spawnPosition, Quaternion.identity);
         }
     }
 }
