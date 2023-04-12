@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 10;
     private Transform player;
     private float nextAttackTime = 0.0f;
+
+    public NavMeshAgent agent;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -18,6 +21,10 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // move
+        agent.SetDestination(player.position);
+
+
         if (player != null && Vector3.Distance(transform.position, player.position) <= attackDistance && Time.time >= nextAttackTime)
         {
             nextAttackTime = Time.time + attackRate;
