@@ -13,6 +13,7 @@ public class EnemyAttack : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatground, PlayerDetect;
+    public Animator anim;
     //chasing
     public Vector3 walkpoint;
     bool walkpointset;
@@ -29,7 +30,9 @@ public class EnemyAttack : MonoBehaviour
 
     private void Awake()
     {
+        player = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnDrawGizmosSelected()
@@ -55,13 +58,24 @@ public class EnemyAttack : MonoBehaviour
     }
     private void chasePlayer()
     {
-        Debug.Log("chase");
         agent.SetDestination(player.position);
+        anim.SetBool("attack", false);
     }
     private void AttackPlayer()
     {
-        Debug.Log("attack");
+        if (gameObject.tag == "Dragon")
+        {
+            float num = Random.Range(0f, 1f);
+            if (num > 0.8f)
+            {
+                anim.SetBool("hornAttack", true);
+            } else
+            {
+                anim.SetBool("hornAttack", false);
+            }
+        }
         agent.SetDestination(transform.position);
+        anim.SetBool("attack", true);
         transform.LookAt(player);
 
         if(!alreadyAttacked) 

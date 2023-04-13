@@ -7,6 +7,7 @@ public class EnemySpawn : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
+    public GameObject itemSpawner;
     public Transform originPoint;
     public Vector3 size;
     public int numofEnemies;
@@ -25,6 +26,7 @@ public class EnemySpawn : MonoBehaviour
 
     public void DetectColliders()
     {
+        itemSpawner.SetActive(true);
         foreach (Collider collider in Physics.OverlapBox(originPoint.position, size/2))
         {
             if (collider.CompareTag("Player"))
@@ -49,7 +51,7 @@ public class EnemySpawn : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            for (int i = 0; i <= 2; i++)
+            for (int i = 1; i <= numofEnemies; i++)
             {
                 SpawnEnemy();
             }

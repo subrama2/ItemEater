@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-
+    private int[] numOfEnemies;
     public GameObject ItemPrefab;
     public Transform originPoint;
     public Vector3 size;
+
+    private void Start()
+    {
+        Debug.Log(GameObject.FindWithTag("Enemy"));
+    }
 
     private void Update()
     {
