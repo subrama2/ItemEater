@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    private int[] numOfEnemies;
+    public int[] numOfEnemies;
     public GameObject ItemPrefab;
     public Transform originPoint;
     public Vector3 size;

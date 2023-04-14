@@ -14,6 +14,7 @@ public class EnemyAttack : MonoBehaviour
     public Transform player;
     public LayerMask whatground, PlayerDetect;
     public Animator anim;
+    public GameObject hitbox;
     //chasing
     public Vector3 walkpoint;
     bool walkpointset;
@@ -54,7 +55,7 @@ public class EnemyAttack : MonoBehaviour
         //}
         if (playerInAttackRange) AttackPlayer();
         else chasePlayer();
-
+        Debug.Log(alreadyAttacked);
     }
     private void chasePlayer()
     {
@@ -77,10 +78,10 @@ public class EnemyAttack : MonoBehaviour
         agent.SetDestination(transform.position);
         anim.SetBool("attack", true);
         transform.LookAt(player);
-
         if(!alreadyAttacked) 
         {
             alreadyAttacked= true;
+            hitbox.SetActive(true);
             Invoke(nameof(resetAttack),timebetweenattack);
         }
        
@@ -88,6 +89,7 @@ public class EnemyAttack : MonoBehaviour
     private void resetAttack()
     {
         alreadyAttacked= false;
+        hitbox.SetActive(false);
     }
     // Update is called once per frame
     

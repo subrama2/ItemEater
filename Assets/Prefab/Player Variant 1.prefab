@@ -176,6 +176,13 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1001 &8646541713732509379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -657,7 +664,7 @@ PrefabInstance:
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: m_Mass
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
@@ -925,8 +932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3c2c16b69a7ee45a9d591f518b1c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
+  currentHealth: 200
+  maxHealth: 200
   OnHitWithReference:
     m_PersistentCalls:
       m_Calls: []
