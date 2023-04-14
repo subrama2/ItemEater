@@ -22,6 +22,8 @@ public class EnemyAttack : MonoBehaviour
 
     //attacking
     public float timebetweenattack;
+    public float windUpTime; // time it takes for attack to wind up
+    public float attackingPeriod; // the period of time the hitbox is active.
     bool alreadyAttacked;
 
     //states
@@ -64,7 +66,7 @@ public class EnemyAttack : MonoBehaviour
     }
     private void AttackPlayer()
     {
-        if (gameObject.tag == "Dragon")
+        /*if (gameObject.tag == "Dragon")
         {
             float num = Random.Range(0f, 1f);
             if (num > 0.8f)
@@ -74,22 +76,35 @@ public class EnemyAttack : MonoBehaviour
             {
                 anim.SetBool("hornAttack", false);
             }
-        }
+        }*/
         agent.SetDestination(transform.position);
         anim.SetBool("attack", true);       
         if(!alreadyAttacked) 
         {
             alreadyAttacked = true;
-            hitbox.SetActive(true);
+            StartCoroutine(Attacking());
             Invoke(nameof(resetAttack),timebetweenattack);
         }
        
     }
     private void resetAttack()
     {
+        Debug.Log("resetAttack");
         alreadyAttacked= false;
         hitbox.SetActive(false);
     }
     // Update is called once per frame
-    
+
+    IEnumerator Attacking()
+    {
+        Debug.Log("Wind Up");
+        yield return new WaitForSeconds(windUpTime);
+        hitbox.SetActive(true);
+        Debug.Log("Attack");
+        yield return new WaitForSeconds(attackingPeriod);
+        Debug.Log("End Attack");
+        hitbox.SetActive(false);
+        yield return new WaitForSeconds(timebetweenattack - windUpTime - attackingPeriod);
+        
+    }
 }

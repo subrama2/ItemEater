@@ -39,13 +39,17 @@ public class Health : MonoBehaviour
             {
                 SpawnItem();
             }
-            isDead = true;
+                isDead = true;
             //Destroy(gameObject);
         }
     }
 
     void SpawnItem()
     {
+        if (itemPrefab == null)
+        {
+            return;
+        }
         Instantiate(itemPrefab, gameObject.transform.position, Quaternion.identity);
     }
 }

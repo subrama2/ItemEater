@@ -7,7 +7,6 @@ public class SpawnTrigger : MonoBehaviour
 {
 
     public List<GameObject> enemies;
-    public GameObject itemSpawner;
     public Transform originPoint;
     public Vector3 size;
     public int numofEnemies;
@@ -39,7 +38,6 @@ public class SpawnTrigger : MonoBehaviour
                 {
                     enemy.SetActive(true);
                 }
-                itemSpawner.SetActive(true);
                 gameObject.SetActive(false);
             }
         }
