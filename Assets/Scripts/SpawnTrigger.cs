@@ -6,7 +6,8 @@ using UnityEngine;
 public class SpawnTrigger : MonoBehaviour
 {
 
-    public GameObject enemySpawner;
+    public List<GameObject> enemies;
+    public GameObject itemSpawner;
     public Transform originPoint;
     public Vector3 size;
     public int numofEnemies;
@@ -34,7 +35,11 @@ public class SpawnTrigger : MonoBehaviour
         {
             if (collider.CompareTag("Player"))
             {
-                enemySpawner.SetActive(true);
+                foreach (GameObject enemy in enemies)
+                {
+                    enemy.SetActive(true);
+                }
+                itemSpawner.SetActive(true);
                 gameObject.SetActive(false);
             }
         }

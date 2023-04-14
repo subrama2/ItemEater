@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originPoint: {fileID: 1144287557}
   radius: 0.3
-  knockbackStrength: 5
+  knockbackStrength: 100000
+  damage: 1
 --- !u!1 &1960794531
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +670,7 @@ PrefabInstance:
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 3
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
@@ -680,6 +681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
+        type: 3}
+      propertyPath: damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
@@ -774,7 +780,7 @@ PrefabInstance:
     - target: {fileID: 8436027123850733334, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8436027123850733334, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
@@ -934,6 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 200
   maxHealth: 200
+  itemPrefab: {fileID: 0}
   OnHitWithReference:
     m_PersistentCalls:
       m_Calls: []

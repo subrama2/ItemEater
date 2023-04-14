@@ -7,16 +7,19 @@ public class Damager : MonoBehaviour
     public Transform originPoint;
     public float radius;
     public float knockbackStrength;
+    public int damage;
+    PlayerMovement player;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        damage = player.damage;
             DetectColliders();
     }
 
@@ -39,9 +42,9 @@ public class Damager : MonoBehaviour
             Health health;
             if ((health = collider.GetComponent<Health>()) && collider.tag == "Enemy")
             { 
-                health.GetHit(3, transform.parent.gameObject);
+                health.GetHit(damage, transform.parent.gameObject);
                 rb = collider.GetComponent<Rigidbody>();
-                rb.AddForce(direction.normalized * knockbackStrength, ForceMode.Impulse);
+                rb.AddForce(direction.normalized * knockbackStrength * Time.deltaTime, ForceMode.Impulse);
                 if (health.isDead)
                 {
                     Destroy(parent);

@@ -7,6 +7,7 @@ public class EnemyDamager : MonoBehaviour
     public Transform originPoint;
     public float radius;
     public float knockbackStrength;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +39,9 @@ public class EnemyDamager : MonoBehaviour
             Health health;
             if ((health = collider.GetComponent<Health>()) && collider.tag == "Player")
             { 
-                health.GetHit(3, transform.parent.gameObject);
+                health.GetHit(damage, transform.parent.gameObject);
                 rb = collider.GetComponent<Rigidbody>();
-                rb.AddForce(direction.normalized * knockbackStrength, ForceMode.Impulse);
+                rb.AddForce(direction.normalized * knockbackStrength * Time.deltaTime, ForceMode.Impulse);
             }
         }
     }

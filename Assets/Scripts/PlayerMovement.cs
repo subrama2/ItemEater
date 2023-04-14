@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject hitBox;
     public Health health;
     public bool inControl = true;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()

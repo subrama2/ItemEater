@@ -76,11 +76,10 @@ public class EnemyAttack : MonoBehaviour
             }
         }
         agent.SetDestination(transform.position);
-        anim.SetBool("attack", true);
-        transform.LookAt(player);
+        anim.SetBool("attack", true);       
         if(!alreadyAttacked) 
         {
-            alreadyAttacked= true;
+            alreadyAttacked = true;
             hitbox.SetActive(true);
             Invoke(nameof(resetAttack),timebetweenattack);
         }

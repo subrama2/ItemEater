@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     public int currentHealth, maxHealth;
 
+    public GameObject itemPrefab;
+
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
 
     [SerializeField]
@@ -33,8 +35,17 @@ public class Health : MonoBehaviour
         } else
         {
             OnDeathWithReference?.Invoke(sender);
+            if (gameObject.tag == "Enemy")
+            {
+                SpawnItem();
+            }
             isDead = true;
             //Destroy(gameObject);
         }
+    }
+
+    void SpawnItem()
+    {
+        Instantiate(itemPrefab, gameObject.transform.position, Quaternion.identity);
     }
 }
