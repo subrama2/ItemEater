@@ -5014,7 +5014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: speed
   player: {fileID: 0}
-  amount: 4
+  amount: 2
 --- !u!1 &1000013970829164
 GameObject:
   m_ObjectHideFlags: 0

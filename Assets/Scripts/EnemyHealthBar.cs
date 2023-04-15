@@ -4,18 +4,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class EnemyHealthBar : MonoBehaviour
 {
-    private Image healthBar;
+    public Image healthBar;
     public Health playerHealth;
     public float currentHealth;
     public float maxHealth;
-    public TMP_Text healthText;
+
+    private Camera _cam;
 
     private void Start()
     {
         maxHealth = playerHealth.maxHealth;
-        healthBar = GetComponent<Image>();  
+
+        _cam = Camera.main;
     }
     // Update is called once per frame
     void Update()
@@ -23,11 +25,6 @@ public class HealthBar : MonoBehaviour
         currentHealth = playerHealth.currentHealth;
         healthBar.fillAmount = currentHealth / maxHealth;
 
-        if (!gameObject.CompareTag("Enemy")) 
-        {
-            healthText.text = "HP: " + currentHealth;
-        }
-
-        
+        transform.rotation = Quaternion.LookRotation(transform.position - _cam.transform.position);
     }
 }

@@ -47,7 +47,7 @@ MonoBehaviour:
   originPoint: {fileID: 1144287557}
   radius: 0.3
   knockbackStrength: 10000
-  damage: 1
+  damage: 10
 --- !u!1 &1960794531
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +660,7 @@ PrefabInstance:
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: m_Drag
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
@@ -670,7 +670,7 @@ PrefabInstance:
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 5000
+      value: 12030
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399627, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
@@ -684,8 +684,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
+        type: 3}
       propertyPath: damage
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
