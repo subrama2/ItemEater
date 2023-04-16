@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
+    public string sceneName;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Dungeon");
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

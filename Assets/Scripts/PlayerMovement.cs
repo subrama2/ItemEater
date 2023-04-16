@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public bool inControl = true;
     public int damage;
 
+    public GameObject loseScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +71,9 @@ public class PlayerMovement : MonoBehaviour
         {
             inControl = false;
             anim.SetTrigger("Dead");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            loseScreen.SetActive(true);
         }
     }
 

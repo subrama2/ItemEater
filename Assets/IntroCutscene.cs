@@ -10,6 +10,7 @@ public class IntroCutscene : MonoBehaviour
     public PlayerMovement playerControl;
     public Dialogue dialogueCheck;
     public GameObject dialogueBox;
+    public GameObject controlBox;
 
     void Start()
     {
@@ -40,5 +41,6 @@ public class IntroCutscene : MonoBehaviour
         playerCam.SetActive(true);
         playerControl.inControl = true;
         gameObject.SetActive(false);
+        controlBox.SetActive(true);
     }
 }
