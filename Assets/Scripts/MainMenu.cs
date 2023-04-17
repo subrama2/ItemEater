@@ -16,11 +16,6 @@ public class MainMenu : MonoBehaviour
     public static int SpPCollected;
     public static int StPCollected;
 
-    public void Awake()
-    {
-        EndGameSummary();
-    }
-
     public void StartGame()
     {
         SceneManager.LoadScene("CaveScene");
@@ -56,16 +51,5 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    public void EndGameSummary()
-    {
-        TMP_Text text = GameObject.Find("EndGameText").GetComponent<TMP_Text>();
-        if (text != null) { 
-        text.text = HPCollected + " Health Potions Collected. \n"
-            + StPCollected + " Strength Potions Collected \n"
-            + SpPCollected + " Speed Potions Collected \n\n "
-            + itemsCollected + " Total Potions Colleced.";
-        }
     }
 }
