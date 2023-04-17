@@ -10,6 +10,7 @@ public class SpawnTrigger : MonoBehaviour
     public Transform originPoint;
     public Vector3 size;
     public int numofEnemies;
+    public GameObject smokePrefab;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class SpawnTrigger : MonoBehaviour
             {
                 foreach (GameObject enemy in enemies)
                 {
+                    Instantiate(smokePrefab, enemy.transform.position, Quaternion.identity);
                     enemy.SetActive(true);
                 }
                 gameObject.SetActive(false);

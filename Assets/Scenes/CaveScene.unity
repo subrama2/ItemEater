@@ -2513,6 +2513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7df77d1ce97281429d11680c92ef9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Dungeon
 --- !u!65 &1949849419
 BoxCollider:
   m_ObjectHideFlags: 0

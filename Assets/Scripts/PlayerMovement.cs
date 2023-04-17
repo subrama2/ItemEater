@@ -12,12 +12,15 @@ public class PlayerMovement : MonoBehaviour
     public Health health;
     public bool inControl = true;
     public int damage;
+    private bool isAttacking = false;
 
     public GameObject loseScreen;
+    public Pause pause;
 
     // Start is called before the first frame update
     void Start()
     {
+        pause = GameObject.Find("UI").GetComponent<Pause>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -28,12 +31,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (inControl) { 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 anim.SetFloat("Speed", 1);
                 transform.Translate(0, 0, speed * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 anim.SetFloat("Speed", 1);
                 transform.Translate(0, 0, -speed * Time.deltaTime);
@@ -43,12 +46,12 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetFloat("Speed", 0);
             }
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 anim.SetFloat("HSpeed", 1);
                 transform.Translate(-speed * Time.deltaTime, 0, 0);
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 anim.SetFloat("HSpeed", 1);
                 transform.Translate(speed * Time.deltaTime, 0, 0);
@@ -60,7 +63,18 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(Attacking());
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                    StartCoroutine(Attacking());
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+            {
+                pause.PauseMenu();
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
 
             float mouseX = Input.GetAxis("Mouse X");
@@ -83,8 +97,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Attack", true);
         yield return new WaitForSeconds(0.40f);
         hitBox.SetActive(true);
-        yield return new WaitForSeconds(0.65f);
+        yield return new WaitForSeconds(0.60f);
         hitBox.SetActive(false);
         anim.SetBool("Attack", false);
+        isAttacking = false;
     }
 }

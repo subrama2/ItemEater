@@ -47,7 +47,7 @@ MonoBehaviour:
   originPoint: {fileID: 4557097942243013055}
   radius: 1.11
   knockbackStrength: 3000
-  damage: 0
+  damage: 20
 --- !u!1 &2384118323798823794
 GameObject:
   m_ObjectHideFlags: 0

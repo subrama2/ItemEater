@@ -50,3 +50,5 @@ MonoBehaviour:
   originPoint: {fileID: 7725019952056924385}
   size: {x: 33, y: 9.5, z: 1.32}
   numofEnemies: 0
+  smokePrefab: {fileID: 5412835239068906253, guid: df1dd8d49e7565843aadc7350993db7f,
+    type: 3}
