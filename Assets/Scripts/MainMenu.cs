@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public void Awake()
     {
+        Time.timeScale = 1;
         EndGameSummary();
     }
 
