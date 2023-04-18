@@ -16649,7 +16649,7 @@ PrefabInstance:
     - target: {fileID: 210655543196482005, guid: 279c0974c3d230444bf84c246ec78d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.76
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 210655543196482005, guid: 279c0974c3d230444bf84c246ec78d77,
         type: 3}
@@ -16659,7 +16659,7 @@ PrefabInstance:
     - target: {fileID: 210655543196482005, guid: 279c0974c3d230444bf84c246ec78d77,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.65
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: 210655543196482005, guid: 279c0974c3d230444bf84c246ec78d77,
         type: 3}
@@ -16711,6 +16711,11 @@ PrefabInstance:
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 1420074476}
+    - target: {fileID: 1232535834668703244, guid: 279c0974c3d230444bf84c246ec78d77,
+        type: 3}
+      propertyPath: swordSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1232535834668703244, guid: 279c0974c3d230444bf84c246ec78d77,
         type: 3}
       propertyPath: rotationSpeed
@@ -18688,7 +18693,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 66b315e37ecf3f942bc1cb0e59c775b7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.9
+  m_Volume: 0.727
   m_Pitch: 1
   Loop: 0
   Mute: 0

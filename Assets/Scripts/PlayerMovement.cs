@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public int damage;
     private bool isAttacking = false;
 
+    public AudioSource swordSound;
+
     public GameObject loseScreen;
     public Pause pause;
 
@@ -97,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Attack", true);
         yield return new WaitForSeconds(0.33f);
         hitBox.SetActive(true);
+        swordSound.Play();
         yield return new WaitForSeconds(1.067f);
         hitBox.SetActive(false);
         anim.SetBool("Attack", false);

@@ -42,7 +42,6 @@ public class Damager : MonoBehaviour
             Health health;
             if ((health = collider.GetComponent<Health>()) && collider.tag == "Enemy")
             {
-                Debug.Log("Enemy lost " + damage);
                 health.GetHit(damage, transform.parent.gameObject);
                 rb = collider.GetComponent<Rigidbody>();
                 rb.AddForce(direction.normalized * knockbackStrength * Time.deltaTime, ForceMode.Impulse);
