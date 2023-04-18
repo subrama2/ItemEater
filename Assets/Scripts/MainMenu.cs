@@ -16,6 +16,11 @@ public class MainMenu : MonoBehaviour
     public static int SpPCollected;
     public static int StPCollected;
 
+    public void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("CaveScene");

@@ -12,6 +12,8 @@ public class EndCutscene : MonoBehaviour
     public GameObject endText;
     private bool isPlayerMoving;
 
+    public float speed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,7 @@ public class EndCutscene : MonoBehaviour
 
     void MovePlayer()
     {
-        player.transform.Translate(0, 0, 0.0085f);
+        player.transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
     IEnumerator EndScene1()
@@ -56,5 +58,7 @@ public class EndCutscene : MonoBehaviour
         cam2.SetActive(true);
         yield return new WaitForSeconds(1.67f);
         endText.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
