@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pause = GameObject.Find("UI").GetComponent<Pause>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 

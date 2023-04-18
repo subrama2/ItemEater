@@ -16703,6 +16703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1232535834668703244, guid: 279c0974c3d230444bf84c246ec78d77,
         type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 138187523}
+    - target: {fileID: 1232535834668703244, guid: 279c0974c3d230444bf84c246ec78d77,
+        type: 3}
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
@@ -16713,13 +16718,18 @@ PrefabInstance:
       objectReference: {fileID: 1420074476}
     - target: {fileID: 1232535834668703244, guid: 279c0974c3d230444bf84c246ec78d77,
         type: 3}
-      propertyPath: swordSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232535834668703244, guid: 279c0974c3d230444bf84c246ec78d77,
-        type: 3}
       propertyPath: rotationSpeed
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993020390145829080, guid: 279c0974c3d230444bf84c246ec78d77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160482113853941570, guid: 279c0974c3d230444bf84c246ec78d77,
+        type: 3}
+      propertyPath: Mute
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18665,7 +18675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1980854695
 Transform:
   m_ObjectHideFlags: 0
@@ -18693,7 +18703,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 66b315e37ecf3f942bc1cb0e59c775b7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.727
+  m_Volume: 0.48
   m_Pitch: 1
   Loop: 0
   Mute: 0

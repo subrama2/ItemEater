@@ -281,7 +281,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1993020390145829080
+--- !u!1 &4039412848820349594
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,41 +289,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 302195556649645182}
-  - component: {fileID: 2160482113853941570}
-  m_Layer: 7
+  - component: {fileID: 4423538796168564059}
+  - component: {fileID: 7785611049158405598}
+  m_Layer: 0
   m_Name: SwordSwipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &302195556649645182
+--- !u!4 &4423538796168564059
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993020390145829080}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 4039412848820349594}
+  m_LocalRotation: {x: -0, y: -0.01985225, z: -0, w: -0.99980295}
+  m_LocalPosition: {x: -0.081048295, y: 2.63, z: -3.0023873}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 210655543196482005}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2160482113853941570
+--- !u!82 &7785611049158405598
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993020390145829080}
+  m_GameObject: {fileID: 4039412848820349594}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a8c555665611fb24ba7cf8b2c51fb2c7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e692c1497174684d942596610c563b2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -996,7 +996,7 @@ PrefabInstance:
         type: 3}
       propertyPath: swordSound
       value: 
-      objectReference: {fileID: 2160482113853941570}
+      objectReference: {fileID: 7785611049158405598}
     - target: {fileID: 7414181930855399631, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       propertyPath: rotationSpeed
@@ -1197,7 +1197,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8436027123850733334, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 302195556649645182}
+      addedObject: {fileID: 4423538796168564059}
     - targetCorrespondingSourceObject: {fileID: 5468917519577708744, guid: 588a26ed9cb8b654ab20231a30368c6d,
         type: 3}
       insertIndex: -1
