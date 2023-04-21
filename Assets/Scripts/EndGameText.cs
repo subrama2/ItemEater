@@ -19,7 +19,7 @@ public class EndGameText : MonoBehaviour
             text.text = MainMenu.HPCollected + " Health Potions Collected. \n"
                 + MainMenu.StPCollected + " Strength Potions Collected \n"
                 + MainMenu.SpPCollected + " Speed Potions Collected \n\n "
-                + MainMenu.itemsCollected + " Total Potions Colleced.";
+                + MainMenu.itemsCollected + " Total Potions Collected.";
         }
     }
 }

@@ -2870,8 +2870,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000019073, y: 122.195984}
-  m_SizeDelta: {x: 344.4939, y: 94.0255}
+  m_AnchoredPosition: {x: -0.000045776, y: 129}
+  m_SizeDelta: {x: 511.2844, y: 94.0255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546366391
 MonoBehaviour:
@@ -2893,7 +2893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Item Eater
+  m_text: Dungeon Runner
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 615f61d15d37bd542b1a2e58669b81db, type: 2}
   m_sharedMaterial: {fileID: -3361816091701490122, guid: 615f61d15d37bd542b1a2e58669b81db,
@@ -2903,8 +2903,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4285839871
+  m_fontColor: {r: 1, g: 0.72504324, b: 0.45660377, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

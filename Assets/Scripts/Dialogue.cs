@@ -8,9 +8,11 @@ public class Dialogue : MonoBehaviour
 
     public TextMeshProUGUI textComponent;
     public string[] lines;
+    public string[] names;
     public float textSpeed;
     public AudioSource dialogTick;
     public bool textDone = false;
+    public TMP_Text speakerName;
 
     private int index;
 
@@ -46,6 +48,14 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        if (names[index] != null)
+        {
+            speakerName.text = names[index];
+        } else
+        {
+            speakerName.text = "null";
+        }
+        
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
