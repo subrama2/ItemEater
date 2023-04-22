@@ -11,6 +11,7 @@ public class SpawnTrigger : MonoBehaviour
     public Vector3 size;
     public int numofEnemies;
     public GameObject smokePrefab;
+    public AudioSource poofSound;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class SpawnTrigger : MonoBehaviour
                     Instantiate(smokePrefab, enemy.transform.position, Quaternion.identity);
                     enemy.SetActive(true);
                 }
+                poofSound.Play();
                 gameObject.SetActive(false);
             }
         }

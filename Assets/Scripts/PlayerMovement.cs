@@ -92,6 +92,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            transform.Translate(0, 0, 0);
+        }
+    }
+
 
     IEnumerator Attacking()
     {

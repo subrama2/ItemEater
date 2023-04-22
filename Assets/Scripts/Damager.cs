@@ -10,6 +10,8 @@ public class Damager : MonoBehaviour
     public int damage;
     PlayerMovement player;
 
+    public AudioSource sound;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -42,6 +44,8 @@ public class Damager : MonoBehaviour
             Health health;
             if ((health = collider.GetComponent<Health>()) && collider.tag == "Enemy")
             {
+
+                sound.Play();
                 health.GetHit(damage, transform.parent.gameObject);
                 rb = collider.GetComponent<Rigidbody>();
                 rb.AddForce(direction.normalized * knockbackStrength * Time.deltaTime, ForceMode.Impulse);

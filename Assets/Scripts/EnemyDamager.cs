@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 
 public class EnemyDamager : MonoBehaviour
@@ -8,6 +10,8 @@ public class EnemyDamager : MonoBehaviour
     public float radius;
     public float knockbackStrength;
     public int damage;
+    public AudioSource weaponSound;
+    public AudioSource hurtSound;
 
     // Start is called before the first frame update
     void Start()
@@ -38,10 +42,15 @@ public class EnemyDamager : MonoBehaviour
             Rigidbody rb;
             Health health;
             if ((health = collider.GetComponent<Health>()) && collider.tag == "Player")
-            { 
+            {
                 health.GetHit(damage, transform.parent.gameObject);
                 rb = collider.GetComponent<Rigidbody>();
                 rb.AddForce(direction.normalized * knockbackStrength * Time.deltaTime, ForceMode.Impulse);
+                if(!health.isDead)
+                {
+                    hurtSound.Play();
+                    weaponSound.Play();
+                }
             }
         }
     }

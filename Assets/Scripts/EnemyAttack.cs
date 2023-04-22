@@ -15,6 +15,7 @@ public class EnemyAttack : MonoBehaviour
     public LayerMask whatground, PlayerDetect;
     public Animator anim;
     public GameObject hitbox;
+    public AudioSource dragonRoar;
     //chasing
     public Vector3 walkpoint;
     bool walkpointset;
@@ -36,6 +37,11 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+
+        if (gameObject.name == "DragonBoss")
+        {
+            dragonRoar.Play();
+        }
     }
 
     private void OnDrawGizmosSelected()
