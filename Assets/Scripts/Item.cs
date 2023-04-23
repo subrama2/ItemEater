@@ -13,7 +13,6 @@ public class Item : MonoBehaviour
     public int amount;
     public MainMenu UI;
     public string displayText = "";
-    public AudioSource collectSound;
 
     void Awake()
     {
@@ -50,7 +49,6 @@ public class Item : MonoBehaviour
                 default: break;
             }
             displayText = type + " Potion Collected.  +" + amount + stat;
-            collectSound.Play();
             MainMenu.itemsCollected++;
             UI.RunPotionText(displayText);
             Destroy(gameObject);

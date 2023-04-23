@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public GameObject creditsWindow;
     public GameObject buttons;
     public TMP_Text potionText;
+    public AudioSource potionCollectSound;
 
     public static int itemsCollected;
     public static int HPCollected;
@@ -61,11 +62,13 @@ public class MainMenu : MonoBehaviour
 
     public void RunPotionText(string text)
     {
+        StopAllCoroutines();
         StartCoroutine(PotionNotify(text));
     }
 
     IEnumerator PotionNotify(string text)
     {
+        potionCollectSound.Play();
         potionText.text = text;
         yield return new WaitForSeconds(2);
         potionText.text = "";
